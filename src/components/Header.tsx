@@ -43,10 +43,10 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent cursor-pointer"
+            className="cursor-pointer select-none whitespace-nowrap text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 via-violet-600 to-teal-500 bg-clip-text text-transparent hover:from-blue-500 hover:via-purple-500 hover:to-teal-400 transition-colors duration-300"
             onClick={() => scrollToSection("#hero")}
           >
-            KP
+            Keshav Parag
           </div>
 
           {/* Desktop Navigation */}
