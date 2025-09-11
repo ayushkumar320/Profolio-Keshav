@@ -1,26 +1,26 @@
-import React from 'react';
-import { Mail, Linkedin, MapPin, Phone, Send } from 'lucide-react';
+import React from "react";
+import {Mail, Linkedin, MapPin, Send} from "lucide-react";
 
 const Contact: React.FC = () => {
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
-      label: 'Email',
-      value: 'keshavdubey2005@gmail.com',
-      href: 'mailto:keshavdubey2005@gmail.com'
+      label: "Email",
+      value: "keshavdubey2005@gmail.com",
+      href: "mailto:keshavdubey2005@gmail.com",
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
-      label: 'LinkedIn',
-      value: 'Connect with me',
-      href: 'https://www.linkedin.com/in/keshav-parag-862142205/'
+      label: "LinkedIn",
+      value: "Connect with me",
+      href: "https://www.linkedin.com/in/keshav-parag-862142205/",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      label: 'Location',
-      value: 'Noida, India',
-      href: null
-    }
+      label: "Location",
+      value: "Noida, India",
+      href: null,
+    },
   ];
 
   return (
@@ -32,8 +32,9 @@ const Contact: React.FC = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Let's connect and explore opportunities for collaboration, internships, 
-            or discussions about business, technology, and innovation.
+            Let's connect and explore opportunities for collaboration,
+            internships, or discussions about business, technology, and
+            innovation.
           </p>
         </div>
 
@@ -55,10 +56,16 @@ const Contact: React.FC = () => {
                         {item.label}
                       </p>
                       {item.href ? (
-                        <a 
+                        <a
                           href={item.href}
-                          target={item.href.startsWith('http') ? '_blank' : undefined}
-                          rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          target={
+                            item.href.startsWith("http") ? "_blank" : undefined
+                          }
+                          rel={
+                            item.href.startsWith("http")
+                              ? "noopener noreferrer"
+                              : undefined
+                          }
                           className="text-lg font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                         >
                           {item.value}
@@ -80,17 +87,19 @@ const Contact: React.FC = () => {
                 Connect With Me
               </h4>
               <div className="space-y-4">
-                <a 
+                <a
                   href="mailto:keshavdubey2005@gmail.com"
                   className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200 group"
                 >
                   <div className="flex items-center space-x-3">
                     <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                    <span className="font-medium text-gray-900 dark:text-white">Send Email</span>
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      Send Email
+                    </span>
                   </div>
                   <Send className="w-4 h-4 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200" />
                 </a>
-                <a 
+                <a
                   href="https://www.linkedin.com/in/keshav-parag-862142205/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -98,7 +107,9 @@ const Contact: React.FC = () => {
                 >
                   <div className="flex items-center space-x-3">
                     <Linkedin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                    <span className="font-medium text-gray-900 dark:text-white">LinkedIn Profile</span>
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      LinkedIn Profile
+                    </span>
                   </div>
                   <Send className="w-4 h-4 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200" />
                 </a>
@@ -120,23 +131,24 @@ const Contact: React.FC = () => {
                   Ready to collaborate?
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  Click the button below to compose an email directly in your Gmail
+                  Click the button below to compose an email directly in your
+                  Gmail
                 </p>
               </div>
-              
-              <a 
+
+              <a
                 href="mailto:keshavdubey2005@gmail.com?subject=Let's Connect - Portfolio Inquiry&body=Hello Keshav,%0D%0A%0D%0AI came across your portfolio and would like to connect with you.%0D%0A%0D%0ABest regards,"
                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-xl space-x-2"
               >
                 <Mail className="w-5 h-5" />
-                <span>Open Gmail</span>
+                <span>Mail Me!</span>
               </a>
-              
+
               <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                   Or connect with me on LinkedIn
                 </p>
-                <a 
+                <a
                   href="https://www.linkedin.com/in/keshav-parag-862142205/"
                   target="_blank"
                   rel="noopener noreferrer"

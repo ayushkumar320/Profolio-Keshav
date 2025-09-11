@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Smooth theme transitions */
+html,
+body,
+#root,
+.theme-transition {
+  transition-property: background-color, color, border-color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Intro overlay styles */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #111827; /* gray-900 */
+  z-index: 9999;
+}
+.dark .intro-overlay {
+  background: #111827;
+  color: white;
+}
+
+.intro-text {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  background-image: linear-gradient(
+    to right,
+    #2563eb,
+    #7c3aed,
+    #14b8a6
+  ); /* blue-600 to purple-600 to teal-500 */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  animation: introFade 900ms ease forwards;
+}
+
+@keyframes introFade {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes overlayOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
