@@ -1,45 +1,71 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
+import React, {useState, useEffect} from "react";
+import {ChevronDown} from "lucide-react";
 
 const Hero: React.FC = () => {
-  const [displayText, setDisplayText] = useState('');
-  const fullText = 'Keshav Parag';
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "Keshav Parag";
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!isDeleting && currentIndex < fullText.length) {
-        setDisplayText(fullText.substring(0, currentIndex + 1));
-        setCurrentIndex(currentIndex + 1);
-      } else if (!isDeleting && currentIndex === fullText.length) {
-        setTimeout(() => setIsDeleting(true), 2000);
-      } else if (isDeleting && currentIndex > 0) {
-        setDisplayText(fullText.substring(0, currentIndex - 1));
-        setCurrentIndex(currentIndex - 1);
-      } else if (isDeleting && currentIndex === 0) {
-        setIsDeleting(false);
-        setTimeout(() => setCurrentIndex(0), 500);
-      }
-    }, isDeleting ? 100 : 150);
+    let typingTimer: NodeJS.Timeout;
+    const typingSpeed = 100; // Base typing speed
+    const pauseDuration = 2000; // Pause when fully typed
+    const backspacePause = 800; // Pause before backspacing
 
-    return () => clearTimeout(timer);
+    const animateText = () => {
+      if (!isDeleting && currentIndex < fullText.length) {
+        // Typing forward
+        typingTimer = setTimeout(() => {
+          setDisplayText(fullText.substring(0, currentIndex + 1));
+          setCurrentIndex((prev) => prev + 1);
+        }, typingSpeed + Math.random() * 50); // Add slight randomness for natural feel
+      } else if (!isDeleting && currentIndex === fullText.length) {
+        // Pause at the end
+        typingTimer = setTimeout(() => {
+          setIsDeleting(true);
+        }, pauseDuration);
+      } else if (isDeleting && currentIndex > 0) {
+        // Backspacing
+        typingTimer = setTimeout(() => {
+          setDisplayText(fullText.substring(0, currentIndex - 1));
+          setCurrentIndex((prev) => prev - 1);
+        }, typingSpeed * 0.7); // Backspace slightly faster
+      } else if (isDeleting && currentIndex === 0) {
+        // Reset to start
+        typingTimer = setTimeout(() => {
+          setIsDeleting(false);
+        }, backspacePause);
+      }
+    };
+
+    animateText();
+    return () => clearTimeout(typingTimer);
   }, [currentIndex, isDeleting, fullText]);
 
   const scrollToAbout = () => {
-    document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector("#about")?.scrollIntoView({behavior: "smooth"});
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-teal-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20"></div>
-      
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200 dark:bg-blue-700/30 rounded-full blur-3xl opacity-70 animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-200 dark:bg-purple-700/30 rounded-full blur-3xl opacity-70 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-teal-200 dark:bg-teal-700/30 rounded-full blur-3xl opacity-70 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div
+          className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-200 dark:bg-purple-700/30 rounded-full blur-3xl opacity-70 animate-pulse"
+          style={{animationDelay: "1s"}}
+        ></div>
+        <div
+          className="absolute top-3/4 left-1/2 w-64 h-64 bg-teal-200 dark:bg-teal-700/30 rounded-full blur-3xl opacity-70 animate-pulse"
+          style={{animationDelay: "2s"}}
+        ></div>
       </div>
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
@@ -60,20 +86,29 @@ const Hero: React.FC = () => {
           {/* Description */}
           <div className="max-w-4xl mx-auto">
             <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-              3rd Year Student | IIC Member | National 10 M Pistol Shooter | Leading Member Of Artificial Intelligence Club
+              3rd Year Student | IIC Member | National 10 M Pistol Shooter |
+              Leading Member Of Artificial Intelligence Club
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <button 
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .querySelector("#contact")
+                  ?.scrollIntoView({behavior: "smooth"})
+              }
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Get In Touch
             </button>
-            <button 
-              onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .querySelector("#about")
+                  ?.scrollIntoView({behavior: "smooth"})
+              }
               className="px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-full hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
             >
               Learn More
@@ -83,7 +118,7 @@ const Hero: React.FC = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <button 
+          <button
             onClick={scrollToAbout}
             className="animate-bounce text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
           >

@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Building2,
-  Calendar,
-  Award,
-  Briefcase,
-  Trophy,
-  User,
-  FileDown,
-} from "lucide-react";
+import {Calendar, Award, Briefcase, Trophy, User, FileDown} from "lucide-react";
 
 const internshipData = {
   company: "NJ Wealth",
@@ -57,8 +49,12 @@ const Internships: React.FC = () => {
           {/* Company Overview Card */}
           <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white">
-                <Building2 className="w-8 h-8" />
+              <div className="w-16 h-16 rounded-xl overflow-hidden bg-white flex items-center justify-center">
+                <img
+                  src="/nj-logo.jpg"
+                  alt="NJ Wealth Logo"
+                  className="w-full h-full object-contain p-2"
+                />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
