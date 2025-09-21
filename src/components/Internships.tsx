@@ -140,13 +140,13 @@ const Internships: React.FC = () => {
           </div>
 
           {/* Certificate Card */}
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-              <div className="text-white">
+              <div className="text-gray-900 dark:text-white">
                 <h3 className="text-xl font-bold mb-2">
                   Internship Certificate
                 </h3>
-                <p className="opacity-90">
+                <p className="text-gray-600 dark:text-gray-300">
                   Download my internship completion certificate
                 </p>
               </div>
@@ -154,7 +154,7 @@ const Internships: React.FC = () => {
                 href={internshipData.certificate}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-white/95 text-blue-600 hover:bg-white px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
+                className="group inline-flex items-center gap-3 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-md active:scale-[0.98]"
               >
                 <FileDown className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110" />
                 <span>View Certificate</span>
