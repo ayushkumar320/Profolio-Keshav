@@ -8,7 +8,7 @@ const Education: React.FC = () => {
       specialization: 'International Business/Trade/Commerce with Artificial Intelligence',
       institution: 'Amity University Noida',
       period: '2023 - 2026',
-      location: 'Noida, India',
+      location: 'Noida, Uttar Pradesh, India',
       status: 'Currently Pursuing (3rd Year)',
       description: 'Specializing in international trade, global commerce, and artificial intelligence applications in business.'
     },
