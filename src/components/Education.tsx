@@ -7,17 +7,17 @@ const Education: React.FC = () => {
       degree: 'Bachelor of Business Administration (BBA)',
       specialization: 'International Business/Trade/Commerce with Artificial Intelligence',
       institution: 'Amity University Noida',
-      period: '2022 - 2025',
+      period: '2023 - 2026',
       location: 'Noida, India',
       status: 'Currently Pursuing (3rd Year)',
       description: 'Specializing in international trade, global commerce, and artificial intelligence applications in business.'
     },
     {
-      degree: '12th Grade',
+      degree: '12th Grade (Higher Secondary Education)',
       specialization: 'Commerce',
       institution: 'Delhi Public School',
-      period: '2020 - 2022',
-      location: 'Ranchi, India',
+      period: '2021 - 2023',
+      location: 'Ranchi, Jharkhand, India',
       status: 'Completed',
       description: 'Completed higher secondary education with a focus on commerce and business studies.'
     }
