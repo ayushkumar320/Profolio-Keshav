@@ -161,6 +161,63 @@ const Internships: React.FC = () => {
               </a>
             </div>
           </div>
+
+          {/* Future Internship Interests Card */}
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                Future Internship Interests
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                I'm actively seeking internship opportunities in these areas:
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: "Quantitative Finance",
+                  description:
+                    "Algorithmic trading, risk analysis, and financial modeling",
+                },
+                {
+                  title: "Investment Banking",
+                  description: "M&A, capital markets, and financial advisory",
+                },
+                {
+                  title: "Private Equity",
+                  description:
+                    "Deal sourcing, due diligence, and portfolio management",
+                },
+                {
+                  title: "Asset Management",
+                  description:
+                    "Portfolio optimization and investment strategies",
+                },
+                {
+                  title: "FinTech",
+                  description:
+                    "Financial software development and blockchain technology",
+                },
+                {
+                  title: "Venture Capital",
+                  description: "Startup evaluation and growth strategy",
+                },
+              ].map((interest, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:shadow-md transition-all duration-300"
+                >
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                    {interest.title}
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    {interest.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
