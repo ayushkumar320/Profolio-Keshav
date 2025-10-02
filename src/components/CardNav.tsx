@@ -109,7 +109,7 @@ const CardNav: React.FC = () => {
               >
                 {item.label}
                 {activeItem === item.href && (
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 animate-pulse" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 animate-pulse pointer-events-none" />
                 )}
               </button>
             ))}
@@ -166,7 +166,7 @@ const CardNav: React.FC = () => {
               >
                 {item.shortLabel || item.label}
                 {activeItem === item.href && (
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 animate-pulse" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 animate-pulse pointer-events-none" />
                 )}
               </button>
             ))}
@@ -247,8 +247,8 @@ const CardNav: React.FC = () => {
 
           {/* Mobile Menu Items */}
           <div
-            className={`mt-3 transition-all duration-300 overflow-hidden ${
-              isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            className={`mt-3 transition-all duration-300 ${
+              isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
             }`}
           >
             <div
@@ -274,7 +274,7 @@ const CardNav: React.FC = () => {
                 >
                   {item.label}
                   {activeItem === item.href && (
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 animate-pulse" />
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 animate-pulse pointer-events-none" />
                   )}
                 </button>
               ))}
