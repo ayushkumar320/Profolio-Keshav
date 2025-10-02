@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {ThemeProvider} from "./contexts/ThemeContext";
-import Header from "./components/Header";
+import CardNav from "./components/CardNav";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Education from "./components/Education";
@@ -29,7 +29,7 @@ function App() {
             <div className="intro-text">Hello, Keshav This Side</div>
           </div>
         )}
-        <Header />
+        <CardNav />
         <main
           className={!showIntro ? "opacity-100" : "opacity-0"}
           style={{transition: "opacity 400ms ease 1s"}}
